@@ -4,25 +4,55 @@
 ;; Enable a backtrace when problems occur
 (setq debug-on-error t)
 
-;;; Require and execute cask
-(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
-(cask-initialize)
-
-;;; Initialize packages
-
 (setq emacs-config-dir (file-name-directory
                         (or (buffer-file-name) load-file-name)))
 
-(defconst *emacs-config-dir* (concat emacs-config-dir "configs/" ""))
+;;; Require and execute cask
+(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+(cask-initialize emacs-config-dir)
 
+;;; Initialize packages
+
+(defconst *emacs-config-dir* (concat emacs-config-dir "configs/" ""))
+(defconst *emacs-custom-dir* (concat emacs-config-dir "custom/" ""))
 ;; A function to load config files
-(defun load-config-files (files)
+(defun load-config-files (config files)
   (dolist (f files)
     (load (expand-file-name
-           (concat *emacs-config-dir* f)))
-    (message "Loaded config file: %s" f)))
+           (concat config f)))
+    ;;(message "Loaded config file: %s" f)
+    ))
 
-(load-config-files
- '())
+;;; Set the proper shell before doing anything else
+(when (eq system-type 'darwin)
+  (require 'exec-path-from-shell)
+  (exec-path-from-shell-initialize))
 
+;; Set proper color theme
+(load-theme 'monokai t)
+
+(load-config-files *emacs-config-dir*
+                   '("key-bindings"
+                     "nyan-mode"
+                     "ido-mode"
+                     "ido-vertical-mode"
+                     "cider"
+                     "company"
+                     "popwin"
+                     "projectile"
+                     "rainbow-delimiters"
+                     "ruby-mode"
+                     "rvm"
+                     "smooth-scrolling"
+                     "yas-snippet"
+                     ))
+
+(load-config-files *emacs-custom-dir*
+                   '("generics"
+                     "functions"
+                     "starter-kit-defuns"
+                     "osx"
+                     "key-bindings"))
+
+(message "Setup is done, happy hacking!")
 ;;; init.el ends here

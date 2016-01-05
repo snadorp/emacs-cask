@@ -1,3 +1,5 @@
 (require 'yasnippet)
 (yas-reload-all)
-(yas-global-mode 1)
+(add-hook 'prog-mode-hook 'yas-minor-mode)
+(add-hook 'text-mode-hook 'yas-minor-mode)
+(add-hook 'org-mode-hook  'yas-minor-mode)

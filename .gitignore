@@ -1,1 +1,5 @@
 .cask
+.backups
+auto-save
+ensime
+tramp

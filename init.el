@@ -32,8 +32,7 @@
 (load-theme 'monokai t)
 
 (load-config-files *emacs-config-dir*
-                   '("key-bindings"
-                     "nyan-mode"
+                   '("nyan-mode"
                      "ido-mode"
                      "ido-vertical-mode"
                      "cider"
@@ -52,7 +51,9 @@
                      "functions"
                      "starter-kit-defuns"
                      "osx"
+                     "x60"
                      "key-bindings"))
 
 (message "Setup is done, happy hacking!")
 ;;; init.el ends here
+(put 'upcase-region 'disabled nil)

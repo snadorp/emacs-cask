@@ -61,14 +61,15 @@
 ;; Make sure all backup and autosave files only live in one place
 ;; Save all tempfiles in $TMPDIR/emacs$UID/
 (defconst emacs-tmp-dir (format "%s%s%s" temporary-file-directory "emacs" (user-uid)))
-(setq backup-directory-alist
-      `((".*" . ,emacs-tmp-dir)))
-(setq auto-save-file-name-transforms
-      `((".*" ,emacs-tmp-dir t)))
-(setq auto-save-list-file-prefix
-      emacs-tmp-dir)
-(setq server-socket-dir
-      (format "%s/%s" emacs-tmp-dir "server"))
+(setq server-socket-dir (format "%s/%s" emacs-tmp-dir "server"))
+
+(defconst emacs-autosafe-dir (concat emacs-config-dir "auto-save/"))
+(setq auto-save-list-file-prefix (format "%s%s" emacs-autosafe-dir ".saves-")); set prefix for auto-saves
+(setq auto-save-file-name-transforms `((".*" ,emacs-autosafe-dir t))); location for all auto-save files
+(setq tramp-auto-save-directory emacs-autosafe-dir) ; auto-save tramp files in local directory
+
+(defconst emacs-backup-dir (concat emacs-config-dir ".backups/"))
+(setq backup-directory-alist `((".*" . , emacs-backup-dir)))
 
 ;; Make backups for files under version control as well.
 (setq vc-make-backup-files t)

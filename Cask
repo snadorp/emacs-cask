@@ -25,6 +25,7 @@
 (depends-on "monokai-theme")
 (depends-on "multi-term")
 (depends-on "multiple-cursors")
+(depends-on "neotree")
 (depends-on "nyan-mode")
 (depends-on "org-trello")
 (depends-on "paredit")

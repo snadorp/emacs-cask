@@ -44,6 +44,7 @@
                      "rvm"
                      "smooth-scrolling"
                      "yas-snippet"
+                     "neotree"
                      ))
 
 (load-config-files *emacs-custom-dir*

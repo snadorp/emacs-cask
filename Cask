@@ -10,7 +10,7 @@
 (depends-on "company-emoji")
 (depends-on "ctags")
 (depends-on "ensime")
-(depends-on "ensime")
+(depends-on "erlang")
 (depends-on "exec-path-from-shell")
 (depends-on "expand-region")
 (depends-on "find-file-in-project")

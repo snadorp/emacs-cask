@@ -56,7 +56,7 @@
 (setq compilation-scroll-output t)
 
 ;; Prevent the annoying beep on errors
-(setq visible-bell t)
+(setq ring-bell-function 'ignore)
 
 ;; Make sure all backup and autosave files only live in one place
 ;; Save all tempfiles in $TMPDIR/emacs$UID/

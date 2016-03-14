@@ -16,6 +16,8 @@
 (depends-on "find-file-in-project")
 (depends-on "flycheck")
 (depends-on "git-timemachine")
+(depends-on "go-autocomplete")
+(depends-on "go-mode")
 (depends-on "highlight-indentation")
 (depends-on "idle-highlight-mode")
 (depends-on "ido-vertical-mode")

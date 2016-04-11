@@ -46,9 +46,6 @@
 ;; Enable cut-and-paste between Emacs and X clipboard.
 (setq x-select-enable-clipboard t)
 
-;; Line-wrapping
-;;(set-default 'fill-column 80)
-
 ;; Get rid of annoying aut-fill-mode
 (auto-fill-mode -1)
 
@@ -117,9 +114,6 @@
 ;; always use spaces for indentation
 (setq-default indent-tabs-mode nil)
 
-;; disable auto-fill-mode
-(auto-fill-mode -1)
-
 ;;set the full path into frame title
 (setq frame-title-format
       '(:eval
@@ -133,9 +127,5 @@
 
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
-
-;;; Disable auto-complete
-;;;(global-auto-complete-mode -1)
-
 
 ;;; generics.el ends here

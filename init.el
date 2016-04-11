@@ -8,10 +8,10 @@
                         (or (buffer-file-name) load-file-name)))
 
 ;;; Require and execute cask
-(let ((linux-path "~/.cask/cask.el")
-      (osx-path "/usr/local/share/emacs/site-lisp/cask/cask.el"))
-  (cond ((file-exists-p linux-path)(require 'cask linux-path))
-        ((file-exists-p osx-path)(require 'cask osx-path))))
+(require 'cask (let ((linux-path "~/.cask/cask.el")
+                     (osx-path "/usr/local/share/emacs/site-lisp/cask/cask.el"))
+                 (cond ((file-exists-p linux-path) linux-path)
+                       ((file-exists-p osx-path) osx-path))))
 
 (cask-initialize emacs-config-dir)
 

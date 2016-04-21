@@ -11,6 +11,10 @@
   (setq mac-option-key-is-meta t)
   (setq mac-right-option-modifier nil)
   (setq mac-allow-anti-aliasing t)
-  '(mouse-wheel-scroll-amount (quote (0.01))))
+  '(mouse-wheel-scroll-amount (quote (0.01)))
+
+  (defun font-exists-p (font) "check if font exists" (if (null (x-list-fonts font)) nil t))
+  (if (font-exists-p "Hack")
+      (set-face-attribute 'default nil :font "Hack-12")))
 
 ;;; osx.el ends here

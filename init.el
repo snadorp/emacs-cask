@@ -33,7 +33,7 @@
   (exec-path-from-shell-initialize))
 
 ;; Set proper color theme
-(load-theme 'monokai t)
+(load-theme 'sanityinc-tomorrow-night t)
 
 (load-config-files *emacs-config-dir*
                    '("nyan-mode"

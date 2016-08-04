@@ -41,6 +41,7 @@
                      "ido-vertical-mode"
                      "cider"
                      "company"
+                     "ensime"
                      "popwin"
                      "projectile"
                      "rainbow-delimiters"
@@ -62,3 +63,4 @@
 (message "Setup is done, happy hacking!")
 ;;; init.el ends here
 (put 'upcase-region 'disabled nil)
+(put 'scroll-left 'disabled nil)

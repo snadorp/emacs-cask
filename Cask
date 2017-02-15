@@ -28,7 +28,6 @@
 (depends-on "paredit")
 (depends-on "popwin")
 (depends-on "projectile")
-(depends-on "protobuf-mode")
 (depends-on "racer")
 (depends-on "rainbow-delimiters")
 (depends-on "rainbow-mode")
